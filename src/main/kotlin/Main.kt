@@ -3,14 +3,17 @@ import java.util.Scanner
 val archive: MutableMap<String, MutableMap<String, String>> = mutableMapOf()
 val scanner: Scanner = Scanner(System.`in`)
 var archiveName: String? = null
-fun main() {
-    println(
-        "Привет!" +
-                "\nДобро пожаловать в приложение 'Заметки'!"
-    )
-    menuArchive("архив", "Выход", archive.keys, ::createArchive, ::openArchive)
-    println("Выход из приложения 'Заметки'!")
+const val name = "архив"
+const val exit =  "Выход"
 
+fun main() {
+        val bigString= """
+        Привет!
+        Добро пожаловать в приложение 'Заметки'!
+        """.trimIndent()
+    println(bigString)
+    menuArchive(name,exit,archive.keys, ::createArchive, ::openArchive)
+    println("Выход из приложения 'Заметки'!")
 }
 
 fun menuArchive(
